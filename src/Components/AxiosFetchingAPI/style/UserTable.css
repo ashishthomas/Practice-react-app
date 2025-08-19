@@ -1,0 +1,27 @@
+.user-table-container {
+  padding: 20px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.user-table thead {
+  background-color: #f0f0f0;
+}
+
+.user-table th {
+  font-weight: 600;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #fafafa;
+}

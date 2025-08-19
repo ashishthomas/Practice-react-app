@@ -1,0 +1,26 @@
+.throttle-example {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 24px 32px;
+  background: #f8fafc;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(80, 120, 200, 0.08);
+  text-align: center;
+}
+
+.throttle-example h2 {
+  color: #2563eb;
+  margin-bottom: 18px;
+}
+
+.scroll-pos {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.scroll-area {
+  border-top: 1px dashed #b6c6e6;
+  margin-top: 18px;
+  padding-top: 12px;
+}

@@ -1,0 +1,32 @@
+@media (max-width: 900px) {
+  .MuiToolbar-root {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 0 !important;
+  }
+  .MuiTypography-h6 {
+    margin-bottom: 8px;
+  }
+  .MuiButton-root {
+    margin: 4px 0;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .MuiToolbar-root {
+    padding: 4px 0 !important;
+  }
+  .MuiTypography-h6 {
+    font-size: 1.1rem;
+  }
+  .MuiButton-root {
+    font-size: 0.95rem;
+    padding: 6px 8px;
+    display: none !important;
+  }
+  .MuiButton-root.MuiButton-text {
+    display: inline-flex !important;
+  }
+}
