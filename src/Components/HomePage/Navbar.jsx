@@ -24,13 +24,6 @@ function Navbar() {
     setAnchorEl(null);
   };
 
-  const handleComponentsClick = (event) => {
-    setComponentsMenu(event.currentTarget);
-  };
-
-  const handleComponentsClose = () => {
-    setComponentsMenu(null);
-  };
   const handleHooksClick = (event) => {
     setComponentsMenu(event.currentTarget);
   };
@@ -95,7 +88,7 @@ function Navbar() {
             UseEffect Example
           </MenuItem>
           <MenuItem
-            onClick={handleHooksClose}    
+            onClick={handleHooksClose}
             component={Link}
             to="/UseContext"
           >

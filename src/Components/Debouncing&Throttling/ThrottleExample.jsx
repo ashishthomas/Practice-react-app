@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { throttle } from "lodash";
-import "./style/Throttle-example.css"
+import "./style/Throttle-example.css";
 
 const ThrottleExample = () => {
   const [scrollPos, setScrollPos] = useState(0);
@@ -18,12 +18,12 @@ const ThrottleExample = () => {
   return (
     <div className="throttle-example">
       <div className="throttle-example">
-      <h2>Throttle Example</h2>
-      <p className="scroll-pos">Scroll Position: {scrollPos} px</p>
-      <div className="scroll-area">
-        <div style={{ height: "1200px" }}></div>
+        <h2>Throttle Example</h2>
+        <p className="scroll-pos">Scroll Position: {scrollPos} px</p>
+        <div className="scroll-area">
+          <div style={{ height: "1200px" }}></div>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

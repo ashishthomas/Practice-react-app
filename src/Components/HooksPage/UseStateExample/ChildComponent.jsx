@@ -8,11 +8,11 @@
 /* props is store the props using the parent component to child component */
 /* it is store the props using the child component to parent component by using the function using the state  */
 
-import React from "react";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 function ChildComponent({ name, setName }) {
-  const [childState, setChildState] = useState("Thomas");
+  const [childState] = useState("Thomas");
   return (
     <div
       style={{
@@ -32,5 +32,10 @@ function ChildComponent({ name, setName }) {
     </div>
   );
 }
+
+ChildComponent.propTypes = {
+  name: PropTypes.string.isRequired,
+  setName: PropTypes.func.isRequired,
+};
 
 export default ChildComponent;

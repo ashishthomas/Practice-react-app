@@ -16,9 +16,17 @@ const CallbackHook = () => {
   );
 };
 
+import PropTypes from "prop-types";
+
 const Button = React.memo(({ onClick }) => {
   console.log("Button component re-rendered");
   return <button onClick={onClick}>Increment</button>;
 });
+
+Button.displayName = "Button";
+
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 
 export default CallbackHook;
