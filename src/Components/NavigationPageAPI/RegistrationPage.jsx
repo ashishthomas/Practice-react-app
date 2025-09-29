@@ -88,6 +88,12 @@ function RegistrationPage() {
     setFormData(formData.filter((_, i) => i !== index));
   };
 
+  const getInputType = (field) => {
+    if (field === "password") return "password";
+    if (field === "age") return "number";
+    return "text";
+  };
+
   return (
     <Container maxWidth="sm">
       <Paper elevation={3} sx={{ p: 4, mt: 5 }}>
@@ -97,18 +103,12 @@ function RegistrationPage() {
         <form onSubmit={formik.handleSubmit} autoComplete="on">
           <Grid container spacing={2}>
             {["firstName", "lastName", "age", "gmail", "password"].map(
-              (name, index) => (
+              (name) => (
                 <Grid item xs={12} key={name}>
                   <TextField
                     fullWidth
                     label={name.charAt(0).toUpperCase() + name.slice(1)}
-                    type={
-                      name === "password"
-                        ? "password"
-                        : name === "age"
-                        ? "number"
-                        : "text"
-                    }
+                    type={getInputType(name)}
                     name={name}
                     value={formik.values[name]}
                     onChange={formik.handleChange}
@@ -139,7 +139,9 @@ function RegistrationPage() {
             Registered Users
           </Typography>
           {formData.map((user, index) => (
-            <Paper key={index} sx={{ p: 2, mt: 2 }}>
+            // <Paper key={index} sx={{ p: 2, mt: 2 }}>
+            <Paper key={user._id} sx={{ p: 2, mt: 2 }}>
+
               <Typography>
                 <strong>Name:</strong> {user.firstName} {user.lastName}
               </Typography>

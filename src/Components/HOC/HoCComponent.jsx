@@ -1,4 +1,3 @@
-import React from "react";
 import { sampledata } from "../utils/Data";
 import HoCCardComponent, { WithHeader } from "./HoCCardComponent";
 

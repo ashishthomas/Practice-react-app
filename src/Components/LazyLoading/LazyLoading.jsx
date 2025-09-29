@@ -24,8 +24,8 @@ function LazyLoading() {
               width="20%"
               height="40%"
               src={item.images[0]}
-              alt="Image not found"
-              loading="lazy" // Enables lazy loading
+              alt={item.title}
+              loading="lazy"
             />
           </div>
         ))
