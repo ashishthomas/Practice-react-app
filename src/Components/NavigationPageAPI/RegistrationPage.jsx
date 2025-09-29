@@ -139,9 +139,7 @@ function RegistrationPage() {
             Registered Users
           </Typography>
           {formData.map((user, index) => (
-            // <Paper key={index} sx={{ p: 2, mt: 2 }}>
             <Paper key={user._id} sx={{ p: 2, mt: 2 }}>
-
               <Typography>
                 <strong>Name:</strong> {user.firstName} {user.lastName}
               </Typography>
