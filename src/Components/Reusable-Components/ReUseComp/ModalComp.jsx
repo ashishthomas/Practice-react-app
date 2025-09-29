@@ -1,5 +1,5 @@
 import { Modal, Typography, Box } from "@mui/material";
-import React, { isValidElement } from "react";
+import PropTypes from "prop-types";
 
 const style = {
   position: "absolute",
@@ -25,13 +25,29 @@ function ModalComp({ open, handleClose, message, modalHeader, children }) {
         <Typography id="modal-modal-title" variant="h6" component="h2">
           {modalHeader}
         </Typography>
-        <Typography id="modal-modal-description sx={{ mt: 2 }}">
+        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
           {message}
         </Typography>
-        {children ? children : <div>{children}</div>}
+        {children ? children : null}
       </Box>
     </Modal>
   );
 }
+
+// Add prop types for validation
+ModalComp.propTypes = {
+  open: PropTypes.bool.isRequired,
+  handleClose: PropTypes.func.isRequired,
+  message: PropTypes.string,
+  modalHeader: PropTypes.string,
+  children: PropTypes.node,
+};
+
+// Optional default props
+ModalComp.defaultProps = {
+  message: "",
+  modalHeader: "",
+  children: null,
+};
 
 export default ModalComp;
