@@ -27,8 +27,6 @@ function Register() {
     console.log(selectedIndex);
     if (selectedIndex !== null) {
       formValues.splice(selectedIndex, 1, values); // update the existing entry
-      // formValues[selectedIndex] = values;
-      // setFormValues([...updateddata, values]);
       formikDetails.resetForm();
       setSelectedIndex(null);
     } else {

@@ -6,17 +6,17 @@ const DebounceExample = () => {
   const [search, setSearch] = useState("");
 
   // Debounce the API call
-  const handleSearch = useCallback(
-    debounce((query) => {
+  const handleSearch = useCallback(() => {
+    return debounce((query) => {
       console.log("Fetching data for:", query);
       // Call API here
-    }, 500),
-    []
-  );
+    }, 500);
+  }, []);
+  const debouncedSearch = handleSearch();
 
   const handleChange = (e) => {
     setSearch(e.target.value);
-    handleSearch(e.target.value);
+    debouncedSearch(e.target.value);
   };
 
   return (
