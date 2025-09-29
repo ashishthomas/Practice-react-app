@@ -9,7 +9,6 @@ const DebounceExample = () => {
   const handleSearch = useCallback(() => {
     return debounce((query) => {
       console.log("Fetching data for:", query);
-      // Call API here
     }, 500);
   }, []);
   const debouncedSearch = handleSearch();

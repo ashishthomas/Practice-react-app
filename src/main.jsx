@@ -12,14 +12,12 @@ import ContactPage from "./Components/NavigationPageAPI/ContactPage.jsx";
 
 /* Importing Hooks */
 import UseStateHook from "./Components/HooksPage/UseStateExample/App.jsx";
-// import UseRefHook from "./Components/HooksPage/UseRefExamples/CounterWithRef.jsx";
 import UseRefHook1 from "./Components/HooksPage/UseRefExamples/InputFocus.jsx";
 import UseEffectHook from "./Components/HooksPage/UseEffectExample/AsyncFnUseEffect.jsx";
 import UseContextHook from "./Components/HooksPage/UseContextExample/ContextHook.jsx";
 import UseMemoHook from "./Components/HooksPage/UseMemoExample/UseMemoExample.jsx";
 import UseReducerHook from "./Components/HooksPage/UseReducerExample/ReducerHook.jsx";
 
-// import UseCallbackHook from "./Components/HooksPage/UseCallbackExample/CallbackHook.jsx";
 import BeforeCallback from "./Components/HooksPage/UseCallbackExample/BeforeCallback/BeforeCallback.jsx";
 import AfterCallback from "./Components/HooksPage/UseCallbackExample/AfterCallback/AfterCallback.jsx";
 
@@ -32,7 +30,6 @@ import LazyLoading from "./Components/LazyLoading/LazyLoading.jsx";
 /* MUI Reused Component */
 import ReuseComponent from "./Components/Reusable-Components/MUI/MUIComponent.jsx";
 /* MUI Modal Component */
-// import MUIDesignModal from "./Components/MUI-Design/MUIDesignModal.jsx";
 import MUILogin from "./Components/MUI-Design/Login.jsx";
 /* Class Component */
 import ClassComponent from "./Components/ClassComponents/ParentComponent.jsx";
@@ -177,7 +174,5 @@ const appRoute = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <>
-    <RouterProvider router={appRoute} />
-  </>
+  <RouterProvider router={appRoute} />
 );

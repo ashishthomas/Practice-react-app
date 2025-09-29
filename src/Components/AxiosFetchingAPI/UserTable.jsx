@@ -1,5 +1,4 @@
-// src/UserTable.js
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import "./style/UserTable.css";
 
@@ -15,7 +14,7 @@ const UserTable = () => {
         setUsers(res.data);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setError("Failed to load data.");
         setLoading(false);
       });

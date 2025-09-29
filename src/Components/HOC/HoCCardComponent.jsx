@@ -1,8 +1,8 @@
 // Writing the HOC Component for the Card Component
 
-import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function HoCCardComponent({ title, description, navigation }) {
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ function HoCCardComponent({ title, description, navigation }) {
 }
 
 export const WithHeader = (HoCCardComponent) => {
-  return (props) => {
+  const WithHeaderComponent = (props) => {
     return (
       <div>
         <h1> Odd Number Card </h1>
@@ -34,6 +34,15 @@ export const WithHeader = (HoCCardComponent) => {
       </div>
     );
   };
+  WithHeaderComponent.displayName = `WithHeader(${
+    HoCCardComponent.displayName || HoCCardComponent.name || "Component"
+  })`;
+  return WithHeaderComponent;
+};
+HoCCardComponent.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  navigation: PropTypes.string,
 };
 
 export default HoCCardComponent;

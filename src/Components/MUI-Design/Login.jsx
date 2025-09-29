@@ -1,4 +1,3 @@
-import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import {
@@ -22,7 +21,6 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import { makeStyles } from "@mui/styles";
 
 function Login() {
   const countries = [
@@ -31,39 +29,6 @@ function Login() {
     { value: "IN", label: "India" },
     { value: "AU", label: "Australia" },
   ];
-
-  // const useStyles = makeStyles((theme) => ({
-  //   root: {
-  //     display: "flex",
-  //     flexDirection: "column",
-  //     alignItems: "center",
-  //     justifyContent: "center",
-  //     height: "100vh",
-  //   },
-  //   form: {
-  //     width: "100%",
-  //     maxWidth: "400px",
-  //     padding: theme.spacing(2),
-  //     border: "1px solid #ccc",
-  //     borderRadius: theme.spacing(1),
-  //     backgroundColor: "#fff",
-  //   },
-  //   formTitle: {
-  //     textAlign: "center",
-  //     marginBottom: theme.spacing(2),
-  //   },
-  //   formGroup: {
-  //     marginBottom: theme.spacing(2),
-  //   },
-  //   formControl: {
-  //     width: "100%",
-  //   },
-  //   submitButton: {
-  //     marginTop: theme.spacing(2),
-  //   },
-  // }));
-
-  // const classes = useStyles();
 
   const validationSchema = Yup.object({
     name: Yup.string().required("Name is required"),
@@ -91,7 +56,6 @@ function Login() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      // alert(JSON.stringify(values, null, 2));
       console.log(values);
       formik.resetForm();
     },

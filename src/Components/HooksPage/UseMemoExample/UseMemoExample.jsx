@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { Button } from "@mui/material";
 
 function useMemoExample() {
@@ -11,16 +11,16 @@ function useMemoExample() {
     return num * 2;
   };
 
-  // ------------------------>this count will be re-calculated when count is changed
+  //this count will be re-calculated when count is changed
   // const memoizedValue = useMemo(() => expensiveCalculation(count), [count]);
 
-  // --------------------------> this other count will be re-calculated when other count is changed
+  //  this other count will be re-calculated when other count is changed
   // const memoizedValue = useMemo(
   //   () => expensiveCalculation(otherCount),
   //   [otherCount]
   // );
 
-  // ------------------------> this count + other count will be re-calculated when count or other count is changed to their sum value
+  // this count + other count will be re-calculated when count or other count is changed to their sum value
   const memoizedValue = useMemo(() => {
     return expensiveCalculation(count + otherCount);
   }, [count, otherCount]);

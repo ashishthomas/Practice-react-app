@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   Container,
   Table,
@@ -18,7 +18,7 @@ import * as Yup from "yup";
 function HomePage() {
   const [showModal, setShowModal] = useState(false);
   const [data, setData] = useState([]);
-  const [data1, setData1] = useState({}); // -------------------> state to store logged in details
+  const [data1, setData1] = useState({}); // state to store logged in details
   const [selectedIndex, setSelectedIndex] = useState(null);
   const navigate = useNavigate();
 
@@ -28,16 +28,16 @@ function HomePage() {
   }, []);
 
   useEffect(() => {
-    //-------------------------------> useEffect to update the formik values when data1 changes
+    // useEffect to update the formik values when data1 changes
     if (data1 && Object.keys(data1).length > 0) {
       formik.setValues({
-        firstName: data1.firstName || "", //-----------------> setting the default values of formik
+        firstName: data1.firstName || "", // setting the default values of formik
         lastName: data1.lastName || "",
         age: data1.age || "",
         gmail: data1.gmail || "",
       });
     }
-  }, [data1]);
+  }, [data1, formik]);
 
   const fetchUsers = async () => {
     try {
@@ -162,7 +162,7 @@ function HomePage() {
         </TableHead>
         <TableBody>
           {data.map((user, index) => (
-            <TableRow key={index}>
+            <TableRow key={user._id || user.id || index}>
               <TableCell>{user.firstName}</TableCell>
               <TableCell>{user.lastName}</TableCell>
               <TableCell>{user.age}</TableCell>

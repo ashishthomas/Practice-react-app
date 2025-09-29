@@ -1,4 +1,3 @@
-// import Home from "./Components/HomePage/Home";
 import NavBar from "./Components/HomePage/Navbar";
 import Footer from "./Components/HomePage/Footer";
 import { Outlet } from "react-router-dom";

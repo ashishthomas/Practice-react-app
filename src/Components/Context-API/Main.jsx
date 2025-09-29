@@ -13,9 +13,19 @@ function Main() {
   const sampleValue = useContext(sampleData);
   const [sample, setSample] = useState(sampleValue.sample1);
 
+  // Memoize the context values to prevent unnecessary re-renders
+  const countContextValue = React.useMemo(
+    () => ({ count1: count, setCount2: setCount }),
+    [count, setCount]
+  );
+  const sampleContextValue = React.useMemo(
+    () => ({ sample3: sample, setSample2: setSample }),
+    [sample, setSample]
+  );
+
   return (
     <>
-      <countData.Provider value={{ count1: count, setCount2: setCount }}>
+      <countData.Provider value={countContextValue}>
         {/* Provide that allows to share data withmultiple components */}
         <div>
           <h1>Context API Example</h1>
@@ -25,7 +35,7 @@ function Main() {
         </div>
       </countData.Provider>
 
-      <sampleData.Provider value={{ sample3: sample, setSample2: setSample }}>
+      <sampleData.Provider value={sampleContextValue}>
         <div>
           <ChangingData />
         </div>
