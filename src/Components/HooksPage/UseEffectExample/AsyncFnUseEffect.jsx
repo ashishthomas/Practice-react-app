@@ -37,12 +37,7 @@ function AsyncFnUseEffect() {
             // Here the ?. is called the optional chaining operator
             //  It allows you to safely access properties of an object that might be null or undefined, without causing errors.
 
-            return (
-              <h3 key={item.id}>{item.title}</h3>
-              //   <React.Fragment key={item.id}>
-              //     <h1>{item.title}</h1>
-              //   </React.Fragment>
-            );
+            return <h3 key={item.id}>{item.title}</h3>;
           })}
         </>
       ) : (

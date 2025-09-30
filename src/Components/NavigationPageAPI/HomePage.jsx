@@ -64,7 +64,7 @@ function HomePage() {
   };
 
   const fetchLoginData = async () => {
-    //----------------------------> function to fetch logged in user details
+    // function to fetch logged in user details
     try {
       const response = await fetch(
         "https://node-crud-r1pa.onrender.com/user/getUserData",
@@ -76,7 +76,7 @@ function HomePage() {
       );
       const result = await response.json();
       console.log("Response:", result);
-      setData1(result.data || {}); // -------------------------> updating the state with logged in user details
+      setData1(result.data || {}); //  updating the state with logged in user details
     } catch (error) {
       alert("An error occurred. Please try again later.");
       console.error("Error fetching data:", error);

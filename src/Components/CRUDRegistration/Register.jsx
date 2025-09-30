@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useFormik } from "formik";
-import { Container, Row, Col } from "react-bootstrap"; // Import necessary Bootstrap components
+import { Container, Row, Col } from "react-bootstrap";
 import * as Yup from "yup";
 import ButtonComponent from "./ButtonComponent";
 
@@ -32,7 +32,7 @@ function Register() {
     } else {
       setFormValues([...formValues, values]); // Add a new entry
     }
-    formikDetails.resetForm(); // reset the form
+    formikDetails.resetForm();
   };
 
   const formikDetails = useFormik({
@@ -118,9 +118,6 @@ function Register() {
         </Row>
         <Row className="justify-content-center mt-4">
           <Col md={6} className="text-center">
-            {/* <Button type="submit" variant="primary" className="w-100">
-              {selectedIndex !== null ? "Update" : "Submit"}
-            </Button> */}
             <ButtonComponent
               btnName={selectedIndex !== null ? "Update" : "Submit"}
               variant="primary"
@@ -138,22 +135,12 @@ function Register() {
             >
               <h3>{ele.name}</h3>
               <h5>{ele.email}</h5>
-              {/* <Button
-                variant="danger"
-                className="m-2"
-                onClick={() => handleDelete(ind)}
-              >
-                Delete
-              </Button> */}
 
               <ButtonComponent
                 btnName="Delete"
                 variant="danger"
                 onclick={() => handleDelete(ind)}
               />
-              {/* <Button variant="warning" onClick={() => handleEdit(ind)}>
-                Update
-              </Button> */}
 
               <ButtonComponent
                 btnName="Update"
